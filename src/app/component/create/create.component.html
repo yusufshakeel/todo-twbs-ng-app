@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-12 col-sm-6 offset-md-3">
+    <form>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text"
+               class="form-control"
+               maxlength="200"
+               required
+               id="title"
+               name="title"
+               [(ngModel)]="todoData.title">
+        <p class="pull-right"><small>{{ todoData.title.length }}/{{ titleCharLimit }}</small></p>
+        <p *ngIf="errorMsg.titleMissing" class="text-danger">Title required</p>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea type="text"
+                  class="form-control"
+                  maxlength="1000"
+                  rows="5"
+                  required
+                  id="description"
+                  name="description"
+                  [(ngModel)]="todoData.description"></textarea>
+        <p class="pull-right"><small>{{ todoData.description.length }}/{{ descriptionCharLimit }}</small></p>
+        <p *ngIf="errorMsg.descriptionMissing" class="text-danger">Description required</p>
+      </div>
+
+      <button type="submit"
+              class="btn btn-primary"
+              (click)="createTodo()"><i class="fa fa-plus"></i> Add</button>
+    </form>
+  </div>
+  <div class="col-12 col-sm-6 offset-md-3">
+    <hr>
+    <div class="text-center">
+      <h3><a href="https://github.com/yusufshakeel/todo-twbs-ng-app">todo-twbs-ng-app</a></h3>
+      <p>Created by: <a href="https://github.com/yusufshakeel">Yusuf Shakeel</a></p>
+      <p>MIT License</p>
+    </div>
+  </div>
+</div>
