@@ -1,6 +1,6 @@
 # TodoTwbsNgApp
 
-This is a simple Todo app created using Bootstrap and Angular.
+This is a simple Todo app created using Bootstrap v4 and Angular v5.
 
 
 ## LICENSE
