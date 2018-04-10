@@ -1,3 +1,29 @@
-<p>
-  todo works!
-</p>
+<div class="row">
+  <div class="col-xs-12 col-sm-12">
+    <h5 class="text-center">Work to do</h5>
+    <div class="row todo-container" *ngFor="let todoItem of todoArr">
+      <div class="col">
+        <div class="card mb-1">
+          <div class="card-body p-2">
+            <div class="btn-group pull-right"
+                 role="group"
+                 aria-label="Button Group">
+              <button type="button" class="btn btn-sm btn-light" (click)="onSelectCard(todoDetailElem)"><i class="fa fa-caret-down"></i></button>
+              <button type="button" class="btn btn-sm btn-light"><i class="fa fa-check"></i></button>
+              <button type="button" class="btn btn-sm btn-light"><i class="fa fa-trash"></i></button>
+            </div>
+            <h5 class="card-title lead">{{todoItem.title}}</h5>
+            <div class="todo-detail d-none" #todoDetailElem>
+              <p>{{todoItem.description}}</p>
+              <div>
+                <small>Created at: {{ todoItem.created_at }}</small>
+                <br>
+                <small>Lastmodified at: {{ todoItem.lastmodified_at}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

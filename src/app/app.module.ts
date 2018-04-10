@@ -9,6 +9,11 @@ import { TodoComponent } from './component/todo/todo.component';
 import { DoneComponent } from './component/done/done.component';
 import { DeletedComponent } from './component/deleted/deleted.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+
+import { TodoService} from './service/todo.service';
+import { DoneService} from './service/done.service';
+import { DeletedService} from './service/deleted.service';
 
 
 @NgModule({
@@ -22,9 +27,14 @@ import { NavbarComponent } from './component/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    TodoService,
+    DoneService,
+    DeletedService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
